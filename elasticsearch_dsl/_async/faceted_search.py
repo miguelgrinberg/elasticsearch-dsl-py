@@ -21,6 +21,9 @@ from .search import AsyncSearch
 
 
 class AsyncFacetedSearch(FacetedSearchBase):
+    async def count(self) -> int:
+        return await self._s.count()
+
     def search(self):
         """
         Returns the base Search object to which the facets are added.

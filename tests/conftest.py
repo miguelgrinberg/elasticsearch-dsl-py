@@ -473,7 +473,7 @@ async def async_pull_request(async_write_client):
 
 
 @fixture
-def setup_ubq_tests(client):
+def setup_ubq_tests(client) -> str:
     index = "test-git"
     create_git_index(client, index)
     bulk(client, TEST_GIT_DATA, raise_on_error=True, refresh=True)

@@ -21,6 +21,9 @@ from .search import Search
 
 
 class FacetedSearch(FacetedSearchBase):
+    def count(self) -> int:
+        return self._s.count()
+
     def search(self):
         """
         Returns the base Search object to which the facets are added.
